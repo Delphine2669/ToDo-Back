@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Movie {
+  id              Int      @id @default(autoincrement())
+  title           String
+  genre           String
+  releaseYear  Int
+  director        String
+  streamingService String
+  notableActors   String
+}
+
+model TvShow {
+  id              Int      @id @default(autoincrement())
+  title           String
+  seasons         Int
+  releaseYear   Int
+  notableActors   String
+  genre           String
+}
