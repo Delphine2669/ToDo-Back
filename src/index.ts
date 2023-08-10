@@ -30,7 +30,14 @@ app.post("/movies", async (req, res) => {
 });
 
 app.post("/tv-shows", async (req, res) => {
-  const { title, seasons, releaseYear, notableActors, genre } = req.body;
+  const {
+    title,
+    seasons,
+    releaseYear,
+    notableActors,
+    genre,
+    streamingService,
+  } = req.body;
   const result = await prisma.tvShow.create({
     data: {
       title,
@@ -38,6 +45,7 @@ app.post("/tv-shows", async (req, res) => {
       releaseYear,
       notableActors,
       genre,
+      streamingService,
     },
   });
   res.json(result);
@@ -53,6 +61,6 @@ app.get("/tv-shows", async (req, res) => {
   res.json(tvShows);
 });
 
-const server = app.listen(3600, () => {
+const server = app.listen(5000, () => {
   console.log("Server is running on port 3600");
 });

@@ -4,25 +4,24 @@ const prisma = new PrismaClient();
 
 const movieData: Prisma.MovieCreateInput[] = [
   {
-    title: "Example Movie 1",
+    title: "Awesome Movie",
     genre: "Action",
     releaseYear: 2022,
-    director: "John Director",
+    director: "John Casavettes",
     streamingService: "Example Streaming",
     notableActors: "Actor A, Actor B",
   },
-  // Add more movie data here...
 ];
 
 const tvShowData: Prisma.TvShowCreateInput[] = [
   {
-    title: "Example TV Show 1",
+    title: "Sense8",
     seasons: 3,
     releaseYear: 2020,
     notableActors: "Actor X, Actor Y",
+    streamingService: "Example Streaming",
     genre: "Drama",
   },
-  // Add more TV show data here...
 ];
 
 async function main() {

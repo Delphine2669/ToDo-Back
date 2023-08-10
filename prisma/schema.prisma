@@ -23,5 +23,6 @@ model TvShow {
   seasons         Int
   releaseYear   Int
   notableActors   String
+    streamingService String
   genre           String
 }

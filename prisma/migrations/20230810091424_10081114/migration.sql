@@ -17,5 +17,6 @@ CREATE TABLE TvShow (
   seasons INT NULL,
   releaseYear INT NULL,
   notableActors TEXT NULL,
+    streamingService TEXT  NULL,
   genre TEXT  NULL
 );
