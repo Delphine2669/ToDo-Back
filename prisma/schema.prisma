@@ -10,19 +10,19 @@ datasource db {
 model Movie {
   id              Int      @id @default(autoincrement())
   title           String
-  genre           String
-  releaseYear  Int
-  director        String
-  streamingService String
-  notableActors   String
+  genre           String?
+  releaseYear  Int?
+  director        String?
+  streamingService String?
+  notableActors   String?
 }
 
 model TvShow {
   id              Int      @id @default(autoincrement())
   title           String
-  seasons         Int
-  releaseYear   Int
-  notableActors   String
-    streamingService String
-  genre           String
+  seasons         Int?
+  releaseYear   Int?
+  notableActors   String?
+  streamingService String?
+  genre           String?
 }
