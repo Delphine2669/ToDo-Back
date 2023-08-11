@@ -30,7 +30,7 @@ app.post("/movies", async (req, res) => {
 });
 
 app.delete("/tv-shows/:id", async (req, res) => {
-  const tvShowId = parseInt(req.params.id);
+  const tvShowId = parseInt(req.params.id, 10);
 
   try {
     const tvShow = await prisma.tvShow.findUnique({
@@ -53,7 +53,7 @@ app.delete("/tv-shows/:id", async (req, res) => {
 });
 
 app.delete("/movies/:id", async (req, res) => {
-  const movieId = parseInt(req.params.id);
+  const movieId = parseInt(req.params.id, 10);
 
   try {
     const movie = await prisma.movie.findUnique({
@@ -106,8 +106,47 @@ app.get("/tv-shows", async (req, res) => {
   const tvShows = await prisma.tvShow.findMany();
   res.json(tvShows);
 });
-app.put("/tv-shows/:id", async (req, res) => {
+
+app.get("/tv-shows/:id", async (req, res) => {
   const tvShowId = parseInt(req.params.id);
+
+  try {
+    const tvShow = await prisma.tvShow.findUnique({
+      where: { id: tvShowId },
+    });
+
+    if (!tvShow) {
+      return res.status(404).json({ error: "TV show not found" });
+    }
+
+    res.json(tvShow);
+  } catch (error) {
+    console.error("Error fetching TV show:", error);
+    res.status(500).json({ error: "Error fetching TV show" });
+  }
+});
+
+app.get("/movies/:id", async (req, res) => {
+  const movieId = parseInt(req.params.id);
+
+  try {
+    const movie = await prisma.movie.findUnique({
+      where: { id: movieId },
+    });
+
+    if (!movie) {
+      return res.status(404).json({ error: "Movie not found" });
+    }
+
+    res.json(movie);
+  } catch (error) {
+    console.error("Error fetching movie:", error);
+    res.status(500).json({ error: "Error fetching movie" });
+  }
+});
+
+app.put("/tv-shows/:id", async (req, res) => {
+  const tvShowId = parseInt(req.params.id, 10);
   const { field, value } = req.body;
 
   try {
