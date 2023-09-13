@@ -1,24 +1,9 @@
-// {
-//   "compilerOptions": {
-//     "sourceMap": true,
-//     "outDir": "dist",
-//     "strict": true,
-//     "lib": ["esnext"],
-//     "esModuleInterop": true
-//   }
-// }
 {
   "compilerOptions": {
-    "target": "ESNext", // Specify the target ECMAScript version
-    "module": "CommonJS", // Specify the module system (CommonJS for Node.js)
-    "outDir": "dist", // Output directory for compiled code
-    "rootDir": "src", // Source directory
-    "strict": true, // Enable strict type checking
-    "esModuleInterop": true, // Enable ES module interoperability
-    "skipLibCheck": true, // Skip type checking of declaration files (for faster compilation)
-    "forceConsistentCasingInFileNames": true, // Enforce consistent casing in filenames (important on case-sensitive file systems)
-    "resolveJsonModule": true // Allow importing JSON modules using `import`
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
+    "lib": ["esnext"],
+    "esModuleInterop": true
+  }
 }
