@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node src/index.ts",
-    "build": "tsc && vite build"
+    "dev": "ts-node src/index.ts"
+  },
+  "engines": {
+    "node": ">=14 <15"
   },
   "dependencies": {
     "@prisma/client": "5.1.1",
