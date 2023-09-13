@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node src/index.ts",
-    "start": "ts-node"
+    "start": "ts-node src",
+    "postinstall": "prisma generate"
   },
   "engines": {
     "node": ">=14 <15"
